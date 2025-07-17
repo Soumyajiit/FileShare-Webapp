@@ -1,0 +1,13 @@
+<div class="upload-container">
+  <h2>Upload File</h2>
+
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <input type="file" (change)="onFileSelected($event)" required />
+    <button type="submit" [disabled]="!selectedFile">Upload</button>
+  </form>
+
+  <div *ngIf="sessionLink" class="success">
+    ✅ File uploaded!
+    <p><strong>Session Link:</strong> <a [href]="sessionLink" target="_blank">{{ sessionLink }}</a></p>
+  </div>
+</div>
